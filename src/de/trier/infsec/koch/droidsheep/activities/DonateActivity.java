@@ -51,7 +51,6 @@ public class DonateActivity extends Activity implements OnClickListener {
 		bNo.setOnClickListener(this);
 	}
 
-	@Override
 	public void onClick(View v) {
 		if (v != null && bYes != null && v.equals(bYes)) {
 		    String url = "http://droidsheep.de/?page_id=121";  

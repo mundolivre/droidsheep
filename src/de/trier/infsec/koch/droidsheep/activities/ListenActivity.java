@@ -310,7 +310,6 @@ public class ListenActivity extends Activity implements OnClickListener, OnItemC
 	//                           START LISTENER METHODS
 	// ############################################################################
 
-	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		if (view == null) {
 			return;
@@ -325,19 +324,17 @@ public class ListenActivity extends Activity implements OnClickListener, OnItemC
 			try {
 				sessionListView.showContextMenuForChild(view);
 			} catch (Exception e) {
-				// VERY BAD, but actually can´t find out how the NPE happens... :-(
+				// VERY BAD, but actually canï¿½t find out how the NPE happens... :-(
 				Log.d(APPLICATION_TAG, "error on click: " + e.getLocalizedMessage());
 			}
 		}
 	}
 
-	@Override
 	public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 		onItemClick(parent, view, position, id);
 		return false;
 	}
 
-	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case MENU_WIFILIST_ID:
@@ -408,7 +405,6 @@ public class ListenActivity extends Activity implements OnClickListener, OnItemC
 		return true;
 	}
 
-	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.bstartstop) {
 			Message m = handler.obtainMessage();
@@ -479,7 +475,6 @@ public class ListenActivity extends Activity implements OnClickListener, OnItemC
 		return super.onKeyDown(keyCode, event);
 	}
 
-	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 		if (buttonView.equals(cbgeneric)) {
 			ListenActivity.generic = isChecked;
@@ -609,7 +604,7 @@ public class ListenActivity extends Activity implements OnClickListener, OnItemC
 
 		if (networkEncryptionWPA && !isSpoofing()) {
 			Toast.makeText(this.getApplicationContext(),
-					"This network is WPA encrypted. Without ARP-Spoofing you won´t find sessions...!", Toast.LENGTH_LONG).show();
+					"This network is WPA encrypted. Without ARP-Spoofing you wonï¿½t find sessions...!", Toast.LENGTH_LONG).show();
 		}
 
 		Button bstartstop = (Button) findViewById(R.id.bstartstop);
